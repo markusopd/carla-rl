@@ -49,10 +49,10 @@ def spawn_sensors(world, transform, sensor_config):
             blueprint.set_attribute(attribute, str(sensor_config[name][attribute]))
         
         sensor = world.spawn_actor(blueprint, transform)
-        queue = queue.Queue()
-        sensor.listen(queue.put)
+        _queue = queue.Queue()
+        sensor.listen(_queue.put)
         sensors.append((name, sensor))
-        queues.append(queue)
+        queues.append(_queue)
 
     return sensors, queues
 
