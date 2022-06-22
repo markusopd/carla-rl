@@ -8,7 +8,6 @@ range:
 sensors:
   rgb:
     type: "sensor.camera.rgb"
-    transform: "1.7, 0, 1.2, 0, 0, 0"
     image_size_x: 320
     image_size_y: 224
     fov: 100
@@ -16,5 +15,6 @@ others:
   maps: ["Town01"]
   carla_root: '$HOME/Carla/CARLA_0_9_11'
   save_path: './data'
+  samples_per_step: 1
 
 

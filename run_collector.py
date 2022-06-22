@@ -89,7 +89,7 @@ def main():
         sensors, queues = spawn_sensors(world, waypoints[0].transform, config['sensors'])
         # world.tick()
         for wp in waypoints:
-            for i in range(config['per_step']):
+            for i in range(config['others']['samples_per_step']):
                 x = random.uniform(*config['range']['x'])
                 y = random.uniform(*config['range']['y'])
                 z = random.uniform(*config['range']['z'])
