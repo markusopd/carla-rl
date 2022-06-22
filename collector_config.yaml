@@ -12,7 +12,7 @@ sensors:
     image_size_x: 320
     image_size_y: 224
     fov: 100
-other:
+others:
   maps: ["Town1"]
   carla_root: '$HOME/Carla/CARLA_0_9_13'
   save_path: './data'
