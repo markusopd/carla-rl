@@ -41,9 +41,10 @@ def save_data(data, path, step):
 def spawn_sensors(world, transform, sensor_config):
     sensors = []
     queues = []
+    sensor_config = sensor_config.copy()
     
     for name in sensor_config.keys():
-        blueprint = world.get_blueprint_library().find(sensor_config[name]['type'])
+        blueprint = world.get_blueprint_library().find(sensor_config[name].pop('type'))
         for attribute in sensor_config[name].keys():
             blueprint.set_attribute(attribute, sensor_config[name][attribute])
         
