@@ -1,4 +1,4 @@
-ray[rllib]==1.1.0
+ray[rllib]==1.13.0
 PyYAML==5.4.1
 paramiko==2.7.2
 scp==0.13.3

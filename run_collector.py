@@ -6,7 +6,6 @@ import queue
 import carla
 import random
 import os
-import glob
 import yaml
 
 def parse_config(path):
@@ -31,7 +30,7 @@ def set_synchronous_mode(client):
     settings.fixed_delta_seconds = 0.05
     client.get_world().apply_settings(settings)
     settings = client.get_world().get_settings()
-    settings.synchronous_mode = True # Enables synchronous mode
+    settings.synchronous_mode = True
     client.get_world().apply_settings(settings)
 
 def save_data(data, path, step):
@@ -57,19 +56,6 @@ def spawn_sensors(world, transform, sensor_config):
     return sensors, queues
 
 def main():
-    # config = {
-    #     'img_height': '224',
-    #     'img_width': '320',
-    #     'path': '../data/test',
-    #     'towns': [f'Town0{i+1}' for i in range(5)],
-    #     'x': [-2, 2],
-    #     'z': [1, 3],
-    #     'y': [-2, 2],
-    #     'yaw': [-50, 50],
-    #     'per_step': 1,
-    #     'delete_prev_files': True,
-    #     'CARLA_ROOT': '$HOME/Carla/CARLA_0_9_13'
-    # }
     config = parse_config('collector_config.yaml')
     client = connect(config)
     step = 0
@@ -87,7 +73,7 @@ def main():
         map = world.get_map()
         waypoints = map.generate_waypoints(2)
         sensors, queues = spawn_sensors(world, waypoints[0].transform, config['sensors'])
-        # world.tick()
+
         for wp in waypoints:
             for i in range(config['others']['samples_per_step']):
                 x = random.uniform(*config['range']['x'])
@@ -109,7 +95,7 @@ def main():
                 
                 for name, sensor in sensors:
                     sensor.set_transform(new_transform)
-                # sleep(0.1)
+                
                 world.tick()
                 for idx, queue in enumerate(queues):
                     data = queue.get()
