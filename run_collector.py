@@ -46,7 +46,7 @@ def spawn_sensors(world, transform, sensor_config):
     for name in sensor_config.keys():
         blueprint = world.get_blueprint_library().find(sensor_config[name].pop('type'))
         for attribute in sensor_config[name].keys():
-            blueprint.set_attribute(attribute, sensor_config[name][attribute])
+            blueprint.set_attribute(attribute, str(sensor_config[name][attribute]))
         
         sensor = world.spawn_actor(blueprint, transform)
         queue = queue.Queue()
