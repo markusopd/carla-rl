@@ -85,7 +85,7 @@ def main():
         world = client.get_world()
         map = world.get_map()
         waypoints = map.generate_waypoints(2)
-        sensors, queus = spawn_sensors(world, waypoints[0].transform)
+        sensors, queues = spawn_sensors(world, waypoints[0].transform, config['sensors'])
         # world.tick()
         for wp in waypoints:
             for i in range(config['per_step']):
@@ -102,7 +102,7 @@ def main():
 
                 wp_rot = wp.transform.rotation
                 pitch_0, yaw_0, roll_0 = wp_rot.pitch, wp_rot.yaw, wp_rot.roll
-                new_rot = carla.Rotation(pitch_0, yaw_0 + yaw, roll_0)
+                new_rot = carla.Rotation(pitch_0 + pitch, yaw_0 + yaw, roll_0 + roll)
 
                 new_transform = carla.Transform(new_loc, new_rot)
                 
