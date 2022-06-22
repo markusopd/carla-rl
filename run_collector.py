@@ -113,7 +113,7 @@ def main():
                 world.tick()
                 for idx, queue in enumerate(queues):
                     data = queue.get()
-                    save_data(data, f'{config["path"]}/{sensors[idx][0]}', step)
+                    save_data(data, f'{config["others"]["save_path"]}/{sensors[idx][0]}', step)
                 step += 1
         for name, sensor in sensors:
             sensors.destroy()
