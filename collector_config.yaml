@@ -14,7 +14,7 @@ sensors:
     fov: 100
 others:
   maps: ["Town1"]
-  carla_root: '$HOME/Carla/CARLA_0_9_13'
+  carla_root: '$HOME/Carla/CARLA_0_9_11'
   save_path: './data'
 
 
