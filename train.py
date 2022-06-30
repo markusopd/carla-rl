@@ -7,7 +7,7 @@ import yaml
 from ray.rllib.agents.sac import SACTrainer
 from ray.rllib.agents import sac
 
-config_path = 'config.yaml'
+config_path = 'env_config.yaml'
 rl_config_path = 'rl_config.yaml'
 
 experiment = Experiment

@@ -5,22 +5,22 @@ num_cpus_for_driver: 0
 input_evaluation: []
 
 optimization:
-    actor_learning_rate: 0.00003
-    critic_learning_rate: 0.00003
-    entropy_learning_rate: 0.00003
+  actor_learning_rate: 0.00003
+  critic_learning_rate: 0.00003
+  entropy_learning_rate: 0.00003
 
-  Q_model:
-    fcnet_hiddens: [256, 256, 256]
-    fcnet_activation: relu
-    post_fcnet_hiddens: []
-    post_fcnet_activation: null
-    custom_model: null  # Use this to define custom Q-model(s).
-    custom_model_config: {}
+Q_model:
+  fcnet_hiddens: [256, 256, 256]
+  fcnet_activation: relu
+  post_fcnet_hiddens: []
+  post_fcnet_activation: null
+  custom_model: null  # Use this to define custom Q-model(s).
+  custom_model_config: {}
 
-  policy_model:
-    fcnet_hiddens: [256, 256, 256]
-    fcnet_activation: relu
-    post_fcnet_hiddens: []
-    post_fcnet_activation: null
-    custom_model: null  # Use this to define a custom policy model.
-    custom_model_config: {}
+policy_model:
+  fcnet_hiddens: [256, 256, 256]
+  fcnet_activation: relu
+  post_fcnet_hiddens: []
+  post_fcnet_activation: null
+  custom_model: null  # Use this to define a custom policy model.
+  custom_model_config: {}

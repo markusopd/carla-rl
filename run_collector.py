@@ -34,6 +34,8 @@ def set_synchronous_mode(client):
     client.get_world().apply_settings(settings)
 
 def save_data(data, path, step):
+    if not os.path.isdir(path):
+        os.mkdir(path)
     data.save_to_disk(f'{path}/{step}.png')
 
 

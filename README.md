@@ -1,3 +1,15 @@
+# Setup
+Create conda environment. Edit the environment.yaml file to match the location of the root of your Carla 9.11 distribution.
+```
+conda env create -f environment.yml
+```
+
+Install Carla's python packages. (For old versions of Carla you might have to downgrade setuptools).
+
+```
+pip install ~/Carla/CARLA_0_9_13/PythonAPI/carla/dist/carla-0.9.13-cp37-cp37m-manylinux_2_27_x86_64.whl
+```
+
 # CARLA and RLlib integration
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
