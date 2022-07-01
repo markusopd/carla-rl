@@ -12,7 +12,12 @@ pip install ~/Carla/CARLA_0_9_13/PythonAPI/carla/dist/carla-0.9.13-cp37-cp37m-ma
 
 # Data collection
 Run `run_collector.py` to collect a dataset of sensory data. The script can be configured by
-editing `collector_config.yaml`.
+editing `collector_config.yaml`. To collect demonstration data, run:
+
+```
+cd demo_data
+python run.py
+```
 
 # CARLA and RLlib integration
 

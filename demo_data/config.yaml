@@ -1,0 +1,7 @@
+img_height: 224
+img_width: 320
+path: 'data'
+CARLA_ROOT: '$HOME/Carla/CARLA_0_9_13'
+steps: 100
+ignore_traffic_lights: True
+map: Town03
