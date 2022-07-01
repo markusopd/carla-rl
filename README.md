@@ -4,11 +4,15 @@ Create conda environment. Edit the environment.yaml file to match the location o
 conda env create -f environment.yml
 ```
 
-Install Carla's python packages. (For old versions of Carla you might have to downgrade setuptools).
+Install Carla's python distribution. (For older versions of Carla you might have to downgrade setuptools).
 
 ```
 pip install ~/Carla/CARLA_0_9_13/PythonAPI/carla/dist/carla-0.9.13-cp37-cp37m-manylinux_2_27_x86_64.whl
 ```
+
+# Data collection
+Run `run_collector.py` to collect a dataset of sensory data. The script can be configured by
+editing `collector_config.yaml`.
 
 # CARLA and RLlib integration
 
